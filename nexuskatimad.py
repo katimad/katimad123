@@ -4,7 +4,7 @@ import time
 import os
 
 # 스크립트 실행 시 노드 아이디를 직접 입력받는다.
-print("노드 아이디를 입력해 주세요:")
+print("노드 아이디를 입력해 주세요, 넥서스 홈페지이에 CLI 노드 아이디 받아서 여기 쓰고 엔터 해:")
 NODE_ID = input().strip()
 
 # 스크린 세션 이름 및 로그 파일 경로
@@ -26,7 +26,7 @@ def install_prerequisites():
       3) Rust 설치 및 RISC-V 타겟 추가
       4) protoc 설치
     """
-    print("[단계] apt 업데이트 & 업그레이드 (로컬 설정 파일 유지)")
+    print("[단계] apt 업글할께")
     # 로컬 설정 파일을 유지하기 위해 DEBIAN_FRONTEND=noninteractive + --force-confdef, --force-confold 옵션 사용
     run_command([
         "sudo", "bash", "-c",
@@ -37,7 +37,7 @@ def install_prerequisites():
         "upgrade"
     ])
 
-    print("[단계] 필수 패키지 설치 (build-essential, pkg-config, 등)")
+    print("[단계] 패키지도 설치 해야해 (build-essential, pkg-config, 등)")
     run_command([
         "sudo", "apt-get", "install", "-y",
         "build-essential", "pkg-config", "libssl-dev",
@@ -129,7 +129,8 @@ def main():
     monitor_log_and_respond()
 
     print("자동화 스크립트 완료.")
-    print(f"스크린 세션을 확인하려면: screen -r {SCREEN_SESSION}")
+    print("나 카티마드 라고 해 텔레그램 구독해줘. https://t.me/katimad")
+    print(f"스크린 세션을 확인하려면 여기 들어가서봐 : screen -r {SCREEN_SESSION}")
 
 if __name__ == "__main__":
     main()
